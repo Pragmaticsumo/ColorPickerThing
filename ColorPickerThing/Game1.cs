@@ -9,7 +9,9 @@ namespace ColorPickerThing
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        public 
+        public Form1 form;
+
+        public Color color;
 
         public Game1()
         {
@@ -29,22 +31,25 @@ namespace ColorPickerThing
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            form = new Form1();
+            form.Show();
+
             // TODO: use this.Content to load your game content here
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
             // TODO: Add your update logic here
+
+            color = new Color(form.Red, form.Green, form.Blue);
+
 
             base.Update(gameTime);
         }
-
+ 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(color);
 
             // TODO: Add your drawing code here
 
