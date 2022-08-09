@@ -43,7 +43,6 @@ namespace ColorPickerThing
 
             color = new Color(form.Red, form.Green, form.Blue);
 
-
             base.Update(gameTime);
         }
  
